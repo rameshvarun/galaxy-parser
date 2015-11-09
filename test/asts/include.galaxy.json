@@ -1,0 +1,10 @@
+[
+  {
+    "path": "otherfileA.galaxy",
+    "type": "Include"
+  },
+  {
+    "path": "otherfileB.galaxy",
+    "type": "Include"
+  }
+]
