@@ -32,3 +32,8 @@
 <assign-op> ::= "=" | "+=" | "-=" | "*=" | "/="
   | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>="
 ```
+## Links
+- [Galaxy Parser in Haskell (Using Parser Combinators)](https://github.com/phyrex1an/galaxy-parser)
+- [Galaxy Language Overview](http://www.sc2mapster.com/wiki/galaxy/script/language-overview/)
+- [Galaxy Operators](http://deaod.de/GalaxyOperators.txt)
+- [Galaxy Types](http://deaod.de/GalaxyTypes.txt)
