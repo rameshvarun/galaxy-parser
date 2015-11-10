@@ -1,10 +1,19 @@
-[
-  {
-    "path": "otherfileA.galaxy",
-    "type": "Include"
-  },
-  {
-    "path": "otherfileB.galaxy",
-    "type": "Include"
-  }
-]
+{
+  "type": "Program",
+  "declarations": [
+    {
+      "type": "Include",
+      "path": {
+        "type": "StringLiteral",
+        "value": "otherfileA.galaxy"
+      }
+    },
+    {
+      "type": "Include",
+      "path": {
+        "type": "StringLiteral",
+        "value": "otherfileB.galaxy"
+      }
+    }
+  ]
+}
