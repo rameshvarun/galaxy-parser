@@ -20,7 +20,12 @@
 
 "if" { return 'IF'; }
 "include" { return 'INCLUDE'; }
+
 "void" { return 'VOID'; }
+
+"structref" { return 'STRUCTREF'; }
+"funcref" { return 'FUNCREF'; }
+"arrayref" { return 'ARRAYREF'; }
 
 "static" { return 'STATIC'; }
 "const" { return 'CONST'; }
@@ -35,6 +40,9 @@
 
 "(" { return 'LPAREN'; }
 ")" { return 'RPAREN'; }
+"<" { return 'LANGLE'; }
+">" { return 'RANGLE'; }
+
 ";" { return 'SEMICOLON'; }
 \s+ { /* skip whitespace */}
 <<EOF>> { return 'EOF'; }
