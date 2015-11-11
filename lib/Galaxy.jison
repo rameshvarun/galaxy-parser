@@ -4,13 +4,16 @@
 
 %lex
 
+digit [0-9]
+id [a-zA-Z][a-zA-Z0-9]*
+
 %x COMMENT STRING
 %%
 
 /* String literals */
-"\"" { yytext = ''; this.begin('STRING'); }
-<STRING>"\"" { this.popState(); return 'STRINGLITERAL'; }
-<STRING>. { }
+"\"" { literal = ''; this.begin('STRING'); }
+<STRING>"\"" { this.popState(); yytext = literal; return 'STRINGLITERAL'; }
+<STRING>. { literal += yytext; }
 
 /* Comments */
 "//" { this.begin('COMMENT'); }
@@ -23,12 +26,16 @@
 
 "void" { return 'VOID'; }
 
+"struct" { return 'STRUCT'; }
+
 "structref" { return 'STRUCTREF'; }
 "funcref" { return 'FUNCREF'; }
 "arrayref" { return 'ARRAYREF'; }
 
 "static" { return 'STATIC'; }
 "const" { return 'CONST'; }
+
+{id} {return 'ID'; }
 
 /* Operators */
 "<<" { return 'LSHIFT'; }
@@ -42,6 +49,8 @@
 ")" { return 'RPAREN'; }
 "<" { return 'LANGLE'; }
 ">" { return 'RANGLE'; }
+"{" { return 'LBRACE'; }
+"}" { return 'RBRACE'; }
 
 ";" { return 'SEMICOLON'; }
 \s+ { /* skip whitespace */}
@@ -53,7 +62,7 @@
 
 program
   : EOF { return ast.Program([]); }
-  | toplevel_declarations EOF { return ast.Program([$1]); }
+  | toplevel_declarations EOF { return ast.Program($1); }
   ;
 
 toplevel_declarations
@@ -63,14 +72,23 @@ toplevel_declarations
 
 toplevel_declaration
   : include { $$ = $1; }
+  | struct_definition { $$ = $1; }
   ;
 
 include
-  : INCLUDE STRINGLITERAL { $$ = ast.Include($2); }
-  | INCLUDE STRINGLITERAL SEMICOLON { $$ = ast.Include($2); }
+  : INCLUDE string_literal { $$ = ast.Include($2); }
+  | INCLUDE string_literal SEMICOLON { $$ = ast.Include($2); }
   ;
 
-function_prototype
-  : STATIC CONST ID
-  | CONST
+string_literal
+  : STRINGLITERAL { $$ = ast.StringLiteral($1);}
   ;
+
+struct_definition
+  : STATIC STRUCT ID LBRACE struct_fields RBRACE SEMICOLON
+  | STRUCT ID LBRACE RBRACE struct_fields SEMICOLON
+  ;
+//function_prototype
+//  : STATIC RETURNTYPE ID arglist SEMICOLON {}
+//  | RETURNTYPE ID arglist SEMICOLON
+//  ;

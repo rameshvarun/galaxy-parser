@@ -24,7 +24,7 @@ describe('galaxy-parser', function() {
   walk.walkSync(sources_dir, function (basedir, filename, stat) {
     var rel_dir = path.relative(sources_dir, basedir);
     if (filename.endsWith('.galaxy')) {
-      it(rel_dir, function() {
+      it(path.join(rel_dir, filename), function() {
         var code = fs.readFileSync(path.join(basedir, filename), 'utf-8');
         var ast = parser.parse(code);
 

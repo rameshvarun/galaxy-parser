@@ -2,26 +2,38 @@
 
 ## Notes
 ### Extended Backus–Naur Form Grammar
-```ebnf
+```
 <program> ::= {<toplevel-declaration>}
 <toplevel-declaration> ::= <struct-declaration>
   | <global-declaration>
   | <type-def>
+  | <function-declaration>
+  | <function-prototype>
+  | <native-declaration>
 
 <global-declaration> ::= ["static"] ["const"] <variable-declaration> ";"
+<variable-declaration> ::= <variable-type> <identifier> []
 
-(* Struct Definitions *)
 <struct-declaration> ::= "struct" "{" {<struct-field>} "}"
-<struct-field> ::= <type> Identifier ";"
+<struct-field> ::= <variable-type> <identifier>  ";"
 
 
 <type-def> ::= "typedef"
 <include-path> ::= "import" StringLiteral [";"]
 
-<variable-declaration> ::= <int
 <function-body> ::= {<variable-declaration> ";"} <statement> ::=
 
-<expression> ::=
+<statement> ::= <expression>
+  | <identifier> <assign-op> <expression>
+
+<expression> ::= <expression> <bin-op> <expression> // Binary operator.
+  | <unary-op> <expression> // Unary operator.
+  | <identifier> "[" "]" // Array indexing.
+  | <identifier> "(" [<expresion_list>] ")" // Function call.
+  | <identifier> // Scope lookup.
+  | <string-literal> // String literal.
+
+<expresion_list> ::= {<expresion> ","} <expresion>
 
 <bin-op> ::= "+" | "-" | "*" | "/" | "%" | "&"
   | "|" | "^" | "<<" | ">>" | "&&" | "||" | "=="
