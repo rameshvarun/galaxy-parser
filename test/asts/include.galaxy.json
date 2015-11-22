@@ -1,17 +1,67 @@
 {
   "type": "Program",
+  "range": {
+    "start": {
+      "line": 2,
+      "column": 0
+    },
+    "end": {
+      "line": 4,
+      "column": 0
+    }
+  },
   "declarations": [
     {
       "type": "Include",
+      "range": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 27
+        }
+      },
       "path": {
         "type": "StringLiteral",
+        "range": {
+          "start": {
+            "line": 2,
+            "column": 26
+          },
+          "end": {
+            "line": 2,
+            "column": 27
+          }
+        },
         "value": "otherfileA.galaxy"
       }
     },
     {
       "type": "Include",
+      "range": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 27
+        }
+      },
       "path": {
         "type": "StringLiteral",
+        "range": {
+          "start": {
+            "line": 3,
+            "column": 26
+          },
+          "end": {
+            "line": 3,
+            "column": 27
+          }
+        },
         "value": "otherfileB.galaxy"
       }
     }

@@ -1,4 +1,14 @@
 {
   "type": "Program",
+  "range": {
+    "start": {
+      "line": 2,
+      "column": 0
+    },
+    "end": {
+      "line": 2,
+      "column": 0
+    }
+  },
   "declarations": []
 }

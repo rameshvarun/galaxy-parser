@@ -1,11 +1,12 @@
 %{
-  var ast = require('./ast');
+var ast = require('./ast');
+var range = require('./range');
 %}
 
 %lex
 
 digit [0-9]
-id [a-zA-Z][a-zA-Z0-9]*
+id [a-zA-Z_][a-zA-Z0-9_]*
 
 %x COMMENT STRING
 %%
@@ -24,8 +25,6 @@ id [a-zA-Z][a-zA-Z0-9]*
 "if" { return 'IF'; }
 "include" { return 'INCLUDE'; }
 
-"void" { return 'VOID'; }
-
 "struct" { return 'STRUCT'; }
 
 "structref" { return 'STRUCTREF'; }
@@ -34,6 +33,10 @@ id [a-zA-Z][a-zA-Z0-9]*
 
 "static" { return 'STATIC'; }
 "const" { return 'CONST'; }
+
+"continue" { return 'CONTINUE'; }
+"break" { return 'BREAK'; }
+"return" { return 'RETURN'; }
 
 {id} {return 'ID'; }
 
@@ -51,6 +54,8 @@ id [a-zA-Z][a-zA-Z0-9]*
 ">" { return 'RANGLE'; }
 "{" { return 'LBRACE'; }
 "}" { return 'RBRACE'; }
+"[" { return 'LBRACKET'; }
+"]" { return 'RBRACKET'; }
 
 ";" { return 'SEMICOLON'; }
 \s+ { /* skip whitespace */}
@@ -61,8 +66,8 @@ id [a-zA-Z][a-zA-Z0-9]*
 %%
 
 program
-  : EOF { return ast.Program([]); }
-  | toplevel_declarations EOF { return ast.Program($1); }
+  : EOF { return ast.Program(range.fromJison(@$), []); }
+  | toplevel_declarations EOF { return ast.Program(range.fromJison(@$), $1); }
   ;
 
 toplevel_declarations
@@ -73,22 +78,41 @@ toplevel_declarations
 toplevel_declaration
   : include { $$ = $1; }
   | struct_definition { $$ = $1; }
+  | function_declaration { $$ = $1; }
   ;
 
 include
-  : INCLUDE string_literal { $$ = ast.Include($2); }
-  | INCLUDE string_literal SEMICOLON { $$ = ast.Include($2); }
+  : INCLUDE string_literal { $$ = ast.Include(range.fromJison(@$), $2); }
+  | INCLUDE string_literal SEMICOLON { $$ = ast.Include(range.fromJison(@$), $2); }
   ;
 
 string_literal
-  : STRINGLITERAL { $$ = ast.StringLiteral($1);}
+  : STRINGLITERAL { $$ = ast.StringLiteral(range.fromJison(@1), $1);}
   ;
 
 struct_definition
-  : STATIC STRUCT ID LBRACE struct_fields RBRACE SEMICOLON
-  | STRUCT ID LBRACE RBRACE struct_fields SEMICOLON
+  : STATIC STRUCT identifier LBRACE struct_fields RBRACE SEMICOLON
+    { $$ = ast.StructDefinition(range.fromJison(@$), true, $3, $5); }
+  | STRUCT identifier LBRACE struct_fields RBRACE SEMICOLON
+    { $$ = ast.StructDefinition(range.fromJison(@$), false, $2, $4) }
   ;
-//function_prototype
-//  : STATIC RETURNTYPE ID arglist SEMICOLON {}
-//  | RETURNTYPE ID arglist SEMICOLON
-//  ;
+
+struct_fields
+  : { $$ = []; }
+  | struct_fields struct_field { $$ = $1.concat($2); }
+  | struct_field { $$ = [$1]; }
+  ;
+
+struct_field
+  : type_specifier identifier SEMICOLON { $$ = ast.StructField(range.fromJison(@$), $1, $2); }
+  ;
+
+type_specifier
+  : identifier { $$ = ast.TypeSpecifier(range.fromJison(@$), $1); }
+  | type_specifier LBRACKET RBRACKET {}
+  | identifier LANGLE ID LBRACKET {}
+  ;
+
+identifier
+  : ID { $$ = ast.Identifier(range.fromJison(@$), $1); }
+  ;

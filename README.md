@@ -12,19 +12,29 @@
   | <native-declaration>
 
 <global-declaration> ::= ["static"] ["const"] <variable-declaration> ";"
-<variable-declaration> ::= <variable-type> <identifier> []
+<variable-declaration> ::= <type-specifier> <identifier> []
 
 <struct-declaration> ::= "struct" "{" {<struct-field>} "}"
-<struct-field> ::= <variable-type> <identifier>  ";"
+<struct-field> ::= <type-specifier> <identifier>  ";"
 
+<function-prototype> ::= ["static"] <type-specifier> <identifier> "(" ")" ";"
 
-<type-def> ::= "typedef"
-<include-path> ::= "import" StringLiteral [";"]
+<function-declaration> ::= ["static"] <type-specifier> <identifier> "(" ")" "{" <function-body> "}"
 
-<function-body> ::= {<variable-declaration> ";"} <statement> ::=
+<type-specifier> ::= <identifier>
+  | <type-specifier> "[" <integer-literal> "]"
+  | <identifier> "<" <identifier> ">"
+
+<type-def> ::= "typedef" <type-specifier> <identifier> ";"
+<include-path> ::= "import" <string-literal> [";"]
+
+<function-body> ::= {<variable-declaration> ";"}
 
 <statement> ::= <expression>
-  | <identifier> <assign-op> <expression>
+  | <identifier> <assign-op> <expression> // TODO: Determine if assignment is a statement or expression.
+  | "return" <expression>
+  | "continue"
+  | "break"
 
 <expression> ::= <expression> <bin-op> <expression> // Binary operator.
   | <unary-op> <expression> // Unary operator.
