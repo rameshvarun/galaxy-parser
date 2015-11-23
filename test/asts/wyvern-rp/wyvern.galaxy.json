@@ -1,0 +1,422 @@
+{
+  "type": "Program",
+  "range": {
+    "start": {
+      "line": 9,
+      "column": 0
+    },
+    "end": {
+      "line": 24,
+      "column": 0
+    }
+  },
+  "declarations": [
+    {
+      "type": "Include",
+      "range": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 37
+        }
+      },
+      "path": {
+        "type": "StringLiteral",
+        "range": {
+          "start": {
+            "line": 9,
+            "column": 36
+          },
+          "end": {
+            "line": 9,
+            "column": 37
+          }
+        },
+        "value": "wyvern/engine/engine.galaxy"
+      }
+    },
+    {
+      "type": "Include",
+      "range": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 41
+        }
+      },
+      "path": {
+        "type": "StringLiteral",
+        "range": {
+          "start": {
+            "line": 10,
+            "column": 40
+          },
+          "end": {
+            "line": 10,
+            "column": 41
+          }
+        },
+        "value": "wyvern/commands/commands.galaxy"
+      }
+    },
+    {
+      "type": "Include",
+      "range": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 29
+        }
+      },
+      "path": {
+        "type": "StringLiteral",
+        "range": {
+          "start": {
+            "line": 11,
+            "column": 28
+          },
+          "end": {
+            "line": 11,
+            "column": 29
+          }
+        },
+        "value": "wyvern/ui/ui.galaxy"
+      }
+    },
+    {
+      "type": "GlobalDeclaration",
+      "range": {
+        "start": {
+          "line": 14,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 182
+        }
+      },
+      "isStatic": false,
+      "isConst": true,
+      "declaration": ";"
+    },
+    {
+      "type": "FunctionDefinition",
+      "range": {
+        "start": {
+          "line": 16,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 1
+        }
+      },
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "range": {
+          "start": {
+            "line": 16,
+            "column": 0
+          },
+          "end": {
+            "line": 16,
+            "column": 24
+          }
+        },
+        "isStatic": false,
+        "returnType": {
+          "type": "Identifier",
+          "range": {
+            "start": {
+              "line": 16,
+              "column": 5
+            },
+            "end": {
+              "line": 16,
+              "column": 22
+            }
+          },
+          "name": "libwyv_initialize"
+        },
+        "name": "(",
+        "arguments": ")"
+      },
+      "body": [
+        {
+          "type": "ExpressionStatement",
+          "range": {
+            "start": {
+              "line": 17,
+              "column": 1
+            },
+            "end": {
+              "line": 17,
+              "column": 27
+            }
+          },
+          "expression": {
+            "type": "FunctionCall",
+            "range": {
+              "start": {
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "line": 17,
+                "column": 27
+              }
+            },
+            "callee": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 17,
+                  "column": 1
+                },
+                "end": {
+                  "line": 17,
+                  "column": 25
+                }
+              },
+              "name": "libwyv_engine_initialize"
+            },
+            "arguments": []
+          }
+        },
+        {
+          "type": "ExpressionStatement",
+          "range": {
+            "start": {
+              "line": 18,
+              "column": 1
+            },
+            "end": {
+              "line": 18,
+              "column": 29
+            }
+          },
+          "expression": {
+            "type": "FunctionCall",
+            "range": {
+              "start": {
+                "line": 18,
+                "column": 1
+              },
+              "end": {
+                "line": 18,
+                "column": 29
+              }
+            },
+            "callee": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 18,
+                  "column": 1
+                },
+                "end": {
+                  "line": 18,
+                  "column": 27
+                }
+              },
+              "name": "libwyv_commands_initialize"
+            },
+            "arguments": []
+          }
+        },
+        {
+          "type": "ExpressionStatement",
+          "range": {
+            "start": {
+              "line": 19,
+              "column": 1
+            },
+            "end": {
+              "line": 19,
+              "column": 23
+            }
+          },
+          "expression": {
+            "type": "FunctionCall",
+            "range": {
+              "start": {
+                "line": 19,
+                "column": 1
+              },
+              "end": {
+                "line": 19,
+                "column": 23
+              }
+            },
+            "callee": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 19,
+                  "column": 1
+                },
+                "end": {
+                  "line": 19,
+                  "column": 21
+                }
+              },
+              "name": "libwyv_ui_initialize"
+            },
+            "arguments": []
+          }
+        },
+        {
+          "type": "ExpressionStatement",
+          "range": {
+            "start": {
+              "line": 21,
+              "column": 1
+            },
+            "end": {
+              "line": 21,
+              "column": 165
+            }
+          },
+          "expression": {
+            "type": "FunctionCall",
+            "range": {
+              "start": {
+                "line": 21,
+                "column": 1
+              },
+              "end": {
+                "line": 21,
+                "column": 165
+              }
+            },
+            "callee": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 21,
+                  "column": 1
+                },
+                "end": {
+                  "line": 21,
+                  "column": 13
+                }
+              },
+              "name": "libwyv_print"
+            },
+            "arguments": [
+              {
+                "type": "FunctionCall",
+                "range": {
+                  "start": {
+                    "line": 21,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 21,
+                    "column": 30
+                  }
+                },
+                "callee": {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 21,
+                      "column": 14
+                    },
+                    "end": {
+                      "line": 21,
+                      "column": 28
+                    }
+                  },
+                  "name": "PlayerGroupAll"
+                },
+                "arguments": []
+              },
+              ","
+            ]
+          }
+        },
+        {
+          "type": "ExpressionStatement",
+          "range": {
+            "start": {
+              "line": 22,
+              "column": 1
+            },
+            "end": {
+              "line": 22,
+              "column": 54
+            }
+          },
+          "expression": {
+            "type": "FunctionCall",
+            "range": {
+              "start": {
+                "line": 22,
+                "column": 1
+              },
+              "end": {
+                "line": 22,
+                "column": 54
+              }
+            },
+            "callee": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 22,
+                  "column": 1
+                },
+                "end": {
+                  "line": 22,
+                  "column": 13
+                }
+              },
+              "name": "libwyv_print"
+            },
+            "arguments": [
+              {
+                "type": "FunctionCall",
+                "range": {
+                  "start": {
+                    "line": 22,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 30
+                  }
+                },
+                "callee": {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 22,
+                      "column": 14
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 28
+                    }
+                  },
+                  "name": "PlayerGroupAll"
+                },
+                "arguments": []
+              },
+              ","
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

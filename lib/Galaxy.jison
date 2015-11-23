@@ -1,6 +1,6 @@
 %{
 var ast = require('./ast');
-var range = require('./range');
+var range = require('./range').fromJison;
 %}
 
 %lex
@@ -13,6 +13,7 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 
 /* String literals */
 "\"" { literal = ''; this.begin('STRING'); }
+<STRING>\\. { literal += yytext[1]; }
 <STRING>"\"" { this.popState(); yytext = literal; return 'STRINGLITERAL'; }
 <STRING>. { literal += yytext; }
 
@@ -47,6 +48,11 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 "-" { return 'MINUS'; }
 "*" { return 'MULT'; }
 "/" { return 'DIV'; }
+"%" { return 'MODULUS'; }
+
+/* Assignment Operators */
+"=" { return 'EQUALS'; }
+"+=" { return 'PLUSEQUALS'; }
 
 "(" { return 'LPAREN'; }
 ")" { return 'RPAREN'; }
@@ -58,16 +64,21 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 "]" { return 'RBRACKET'; }
 
 ";" { return 'SEMICOLON'; }
+"," { return 'COMMA'; }
+
 \s+ { /* skip whitespace */}
 <<EOF>> { return 'EOF'; }
 /lex
 
 %start program
+
+%left PLUS MINUS
+%left MULT DIV MODULUS
 %%
 
 program
-  : EOF { return ast.Program(range.fromJison(@$), []); }
-  | toplevel_declarations EOF { return ast.Program(range.fromJison(@$), $1); }
+  : EOF { return ast.Program(range(@$), []); }
+  | toplevel_declarations EOF { return ast.Program(range(@$), $1); }
   ;
 
 toplevel_declarations
@@ -76,43 +87,107 @@ toplevel_declarations
   ;
 
 toplevel_declaration
-  : include { $$ = $1; }
-  | struct_definition { $$ = $1; }
-  | function_declaration { $$ = $1; }
+  : include | struct_definition | function_declaration SEMICOLON
+  | function_definition | global_declaration ;
+
+global_declaration
+  : STATIC CONST variable_declaration SEMICOLON
+    { $$ = ast.GlobalDeclaration(range(@$), true, true, $3); }
+  | STATIC variable_declaration SEMICOLON
+    { $$ = ast.GlobalDeclaration(range(@$), true, false, $3); }
+  | CONST variable_declaration SEMICOLON
+    { $$ = ast.GlobalDeclaration(range(@$), false, true, $3); }
+  | variable_declaration SEMICOLON
+    { $$ = ast.GlobalDeclaration(range(@$), false, false, $3); }
+  ;
+
+variable_declaration
+  : type_specifier identifier
+    { $$ = ast.VariableDeclaration(range(@$), $1, $2, null); }
+  | type_specifier identifier EQUALS expression
+    { $$ = ast.VariableDeclaration(range(@$), $1, $2, $4); }
+  ;
+
+function_declaration
+  : STATIC type_specifier identifier LPAREN optional_formals RPAREN
+    { $$ = ast.FunctionDeclaration(range(@$), true, $2, $3, $5); }
+  | type_specifier identifier LPAREN optional_formals RPAREN
+    { $$ = ast.FunctionDeclaration(range(@$), false, $2, $3, $5); }
+  ;
+
+function_definition
+  : function_declaration LBRACE optional_statements RBRACE
+    { $$ = ast.FunctionDefinition(range(@$), $1, $3); }
+  ;
+
+optional_statements : { $$ = []; } | statements;
+optional_formals : { $$ = []; } | formals;
+optional_actuals : { $$ = []; } | actuals;
+
+statements
+  : statements statement SEMICOLON { $$ = $1.concat($2); }
+  | statement SEMICOLON { $$ = [$1]; }
+  ;
+
+formals
+  : formals COMMA formal { $$ = $1.concat($2); }
+  | formal { $$ = [$1]; }
+  ;
+
+formal : type_specifier identifier { $$ = ast.Formal(range(@$), $1, $2); };
+
+actuals
+  : actuals COMMA expression { $$ = $1.concat($2); }
+  | expression { $$ = [$1]; }
   ;
 
 include
-  : INCLUDE string_literal { $$ = ast.Include(range.fromJison(@$), $2); }
-  | INCLUDE string_literal SEMICOLON { $$ = ast.Include(range.fromJison(@$), $2); }
+  : INCLUDE string_literal { $$ = ast.Include(range(@$), $2); }
+  | INCLUDE string_literal SEMICOLON { $$ = ast.Include(range(@$), $2); }
   ;
 
 string_literal
-  : STRINGLITERAL { $$ = ast.StringLiteral(range.fromJison(@1), $1);}
+  : STRINGLITERAL { $$ = ast.StringLiteral(range(@1), $1);}
   ;
 
 struct_definition
-  : STATIC STRUCT identifier LBRACE struct_fields RBRACE SEMICOLON
-    { $$ = ast.StructDefinition(range.fromJison(@$), true, $3, $5); }
-  | STRUCT identifier LBRACE struct_fields RBRACE SEMICOLON
-    { $$ = ast.StructDefinition(range.fromJison(@$), false, $2, $4) }
+  : static_modifier STRUCT identifier LBRACE struct_fields RBRACE SEMICOLON
+    { $$ = ast.StructDefinition(range(@$), $1, $3, $5); }
   ;
 
+static_modifier : { $$ = false; } | STATIC { $$ = true; } ;
+const_modifier : { $$ = false; } | CONST { $$ = true; };
+
 struct_fields
-  : { $$ = []; }
-  | struct_fields struct_field { $$ = $1.concat($2); }
+  : struct_fields struct_field { $$ = $1.concat($2); }
   | struct_field { $$ = [$1]; }
   ;
 
 struct_field
-  : type_specifier identifier SEMICOLON { $$ = ast.StructField(range.fromJison(@$), $1, $2); }
+  : type_specifier identifier SEMICOLON { $$ = ast.StructField(range(@$), $1, $2); }
+  ;
+
+expression
+  : string_literal
+  | identifier
+  | identifier LPAREN optional_actuals RPAREN
+    { $$ = ast.FunctionCall(range(@$), $1, $3); }
+
+  | expression PLUS expression
+    { $$ = ast.BinaryOperation(range(@$), $1, $1, $3); }
+  | expression MINUS expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+  ;
+
+statement
+  : variable_declaration
+  | expression { $$ = ast.ExpressionStatement(range(@$), $1); }
   ;
 
 type_specifier
-  : identifier { $$ = ast.TypeSpecifier(range.fromJison(@$), $1); }
-  | type_specifier LBRACKET RBRACKET {}
-  | identifier LANGLE ID LBRACKET {}
+  : identifier { $$ = ast.TypeSpecifier(range(@$), $1); }
   ;
 
 identifier
-  : ID { $$ = ast.Identifier(range.fromJison(@$), $1); }
+  : ID { $$ = ast.Identifier(range(@$), $1); }
   ;

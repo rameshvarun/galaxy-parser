@@ -1,11 +1,5 @@
 // Basic struct parsing test.
 
-struct emptyStruct {
-};
-
-static struct emptyStaticStruct {
-};
-
 struct structWithFields {
   int test_int;
 };
