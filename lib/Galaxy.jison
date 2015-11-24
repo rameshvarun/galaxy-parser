@@ -32,6 +32,7 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 "if" { return 'IF'; }
 "else" { return 'ELSE'; }
 "while" { return 'WHILE'; }
+"for" { return 'FOR'; }
 
 "include" { return 'INCLUDE'; }
 
@@ -39,10 +40,6 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 "false" { return 'FALSE'; }
 
 "struct" { return 'STRUCT'; }
-
-"structref" { return 'STRUCTREF'; }
-"funcref" { return 'FUNCREF'; }
-"arrayref" { return 'ARRAYREF'; }
 
 "static" { return 'STATIC'; }
 "const" { return 'CONST'; }
@@ -126,11 +123,11 @@ global_declaration
   : STATIC CONST variable_declaration SEMICOLON
     { $$ = ast.GlobalDeclaration(range(@$), true, true, $3); }
   | STATIC variable_declaration SEMICOLON
-    { $$ = ast.GlobalDeclaration(range(@$), true, false, $3); }
+    { $$ = ast.GlobalDeclaration(range(@$), true, false, $2); }
   | CONST variable_declaration SEMICOLON
-    { $$ = ast.GlobalDeclaration(range(@$), false, true, $3); }
+    { $$ = ast.GlobalDeclaration(range(@$), false, true, $2); }
   | variable_declaration SEMICOLON
-    { $$ = ast.GlobalDeclaration(range(@$), false, false, $3); }
+    { $$ = ast.GlobalDeclaration(range(@$), false, false, $1); }
   ;
 
 variable_declaration
@@ -214,6 +211,10 @@ expression
     { $$ = ast.FunctionCall(range(@$), $1, $3); }
   | expression DOT identifier
     { $$ = ast.PropertyAccess(range(@$), $1, $3); }
+  | expression LBRACKET expression RBRACKET
+    { $$ = ast.ArrayAccess(range(@$), $1, $3); }
+  | LPAREN expression RPAREN
+    { $$ = $2; }
 
   | expression OR expression
     { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
@@ -256,12 +257,12 @@ statement
   | expression SEMICOLON { $$ = ast.ExpressionStatement(range(@$), $1); }
   | if_statement
   | while_statement
-  | identifier assignop expression SEMICOLON { $$ = ast.AssignmentStatment(range(@$), $2, $1, $3); }
+  | expression assignop expression SEMICOLON { $$ = ast.AssignmentStatment(range(@$), $2, $1, $3); }
 
   | RETURN expression SEMICOLON { $$ = ast.ReturnStatment(range(@$), $2); }
   | RETURN SEMICOLON { $$ = ast.ReturnStatment(range(@$), null); }
   | BREAK SEMICOLON { $$ = ast.BreakStatment(range(@$)); }
-  | CONTINUE SEMICOLON { $$ = ast.ContinueStatment(range(@$)); }
+  | CONTINUE SEMICOLON { $$ = ast.ContinueStatement(range(@$)); }
   ;
 
 assignop : EQUALS | PLUSEQUALS | MINUSEQUALS;
@@ -283,6 +284,8 @@ while_statement
 
 type_specifier
   : identifier { $$ = ast.TypeSpecifier(range(@$), $1); }
+  | type_specifier LBRACKET identifier RBRACKET { $$ = ast.ArrayType(range(@$), $1, $3); }
+  | type_specifier LBRACKET integer_literal RBRACKET { $$ = ast.ArrayType(range(@$), $1, $3); }
   ;
 
 identifier

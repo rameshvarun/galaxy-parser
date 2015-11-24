@@ -10,8 +10,6 @@
   "dependencies": {},
   "scripts": {
     "build" : "jison lib/Galaxy.jison -o lib/index.js -m commonjs -p lr",
-    "test": "mocha test/",
-    "prepublish": "npm run build",
-    "pretest": "npm run build"
+    "test": "mocha test/"
   }
 }
