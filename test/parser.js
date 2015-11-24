@@ -28,9 +28,11 @@ describe('galaxy-parser', function() {
         var code = fs.readFileSync(path.join(basedir, filename), 'utf-8');
         var ast = parser.parse(code);
 
-        var expected = JSON.parse(fs.readFileSync(
-          path.join(asts_dir, rel_dir, filename) + '.json', 'utf-8'));
-        assert.deepEqual(ast, expected);
+        var expectedFile = path.join(asts_dir, rel_dir, filename) + '.json';
+        if (fs.existsSync(expectedFile)) {
+          var expected = JSON.parse(fs.readFileSync(expectedFile, 'utf-8'));
+          assert.deepEqual(ast, expected);
+        }
       });
     }
   });

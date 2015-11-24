@@ -1,0 +1,688 @@
+{
+  "type": "Program",
+  "range": {
+    "start": {
+      "line": 12,
+      "column": 0
+    },
+    "end": {
+      "line": 27,
+      "column": 1
+    }
+  },
+  "declarations": [
+    {
+      "type": "FunctionDefinition",
+      "range": {
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 1
+        }
+      },
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "range": {
+          "start": {
+            "line": 12,
+            "column": 0
+          },
+          "end": {
+            "line": 12,
+            "column": 35
+          }
+        },
+        "isStatic": false,
+        "returnType": {
+          "type": "Identifier",
+          "range": {
+            "start": {
+              "line": 12,
+              "column": 7
+            },
+            "end": {
+              "line": 12,
+              "column": 25
+            }
+          },
+          "name": "libwyv_string_trim"
+        },
+        "name": "(",
+        "arguments": ")"
+      },
+      "body": [
+        {
+          "type": {
+            "type": "TypeSpecifier",
+            "range": {
+              "start": {
+                "line": 13,
+                "column": 1
+              },
+              "end": {
+                "line": 13,
+                "column": 4
+              }
+            },
+            "name": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 13,
+                  "column": 1
+                },
+                "end": {
+                  "line": 13,
+                  "column": 4
+                }
+              },
+              "name": "int"
+            }
+          },
+          "range": {
+            "start": {
+              "line": 13,
+              "column": 1
+            },
+            "end": {
+              "line": 13,
+              "column": 14
+            }
+          },
+          "name": {
+            "type": "Identifier",
+            "range": {
+              "start": {
+                "line": 13,
+                "column": 5
+              },
+              "end": {
+                "line": 13,
+                "column": 10
+              }
+            },
+            "name": "front"
+          },
+          "initializer": {
+            "type": "IntegerLiteral",
+            "range": {
+              "start": {
+                "line": 13,
+                "column": 13
+              },
+              "end": {
+                "line": 13,
+                "column": 14
+              }
+            },
+            "value": 1
+          }
+        },
+        {
+          "type": {
+            "type": "TypeSpecifier",
+            "range": {
+              "start": {
+                "line": 14,
+                "column": 1
+              },
+              "end": {
+                "line": 14,
+                "column": 4
+              }
+            },
+            "name": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 14,
+                  "column": 1
+                },
+                "end": {
+                  "line": 14,
+                  "column": 4
+                }
+              },
+              "name": "int"
+            }
+          },
+          "range": {
+            "start": {
+              "line": 14,
+              "column": 1
+            },
+            "end": {
+              "line": 14,
+              "column": 26
+            }
+          },
+          "name": {
+            "type": "Identifier",
+            "range": {
+              "start": {
+                "line": 14,
+                "column": 5
+              },
+              "end": {
+                "line": 14,
+                "column": 8
+              }
+            },
+            "name": "end"
+          },
+          "initializer": {
+            "type": "FunctionCall",
+            "range": {
+              "start": {
+                "line": 14,
+                "column": 11
+              },
+              "end": {
+                "line": 14,
+                "column": 26
+              }
+            },
+            "callee": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 14,
+                  "column": 11
+                },
+                "end": {
+                  "line": 14,
+                  "column": 23
+                }
+              },
+              "name": "StringLength"
+            },
+            "arguments": [
+              {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 14,
+                    "column": 24
+                  },
+                  "end": {
+                    "line": 14,
+                    "column": 25
+                  }
+                },
+                "name": "s"
+              }
+            ]
+          }
+        },
+        {
+          "type": "WhileStatment",
+          "range": {
+            "start": {
+              "line": 17,
+              "column": 1
+            },
+            "end": {
+              "line": 19,
+              "column": 2
+            }
+          },
+          "condition": {
+            "type": "BinaryOperation",
+            "range": {
+              "start": {
+                "line": 17,
+                "column": 8
+              },
+              "end": {
+                "line": 17,
+                "column": 41
+              }
+            },
+            "operator": "==",
+            "left": {
+              "type": "FunctionCall",
+              "range": {
+                "start": {
+                  "line": 17,
+                  "column": 8
+                },
+                "end": {
+                  "line": 17,
+                  "column": 34
+                }
+              },
+              "callee": {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 17,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 17,
+                    "column": 17
+                  }
+                },
+                "name": "StringSub"
+              },
+              "arguments": [
+                {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 17,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 19
+                    }
+                  },
+                  "name": "s"
+                },
+                {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 17,
+                      "column": 21
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 26
+                    }
+                  },
+                  "name": "front"
+                },
+                {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 17,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 33
+                    }
+                  },
+                  "name": "front"
+                }
+              ]
+            },
+            "right": {
+              "type": "StringLiteral",
+              "range": {
+                "start": {
+                  "line": 17,
+                  "column": 40
+                },
+                "end": {
+                  "line": 17,
+                  "column": 41
+                }
+              },
+              "value": " "
+            }
+          },
+          "body": [
+            {
+              "type": "AssignmentStatment",
+              "range": {
+                "start": {
+                  "line": 18,
+                  "column": 2
+                },
+                "end": {
+                  "line": 18,
+                  "column": 20
+                }
+              },
+              "operator": "=",
+              "name": {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 18,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 18,
+                    "column": 7
+                  }
+                },
+                "name": "front"
+              },
+              "value": {
+                "type": "BinaryOperation",
+                "range": {
+                  "start": {
+                    "line": 18,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 18,
+                    "column": 19
+                  }
+                },
+                "operator": {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 18,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 15
+                    }
+                  },
+                  "name": "front"
+                },
+                "left": {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 18,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 15
+                    }
+                  },
+                  "name": "front"
+                },
+                "right": {
+                  "type": "IntegerLiteral",
+                  "range": {
+                    "start": {
+                      "line": 18,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 19
+                    }
+                  },
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "WhileStatment",
+          "range": {
+            "start": {
+              "line": 22,
+              "column": 1
+            },
+            "end": {
+              "line": 24,
+              "column": 2
+            }
+          },
+          "condition": {
+            "type": "BinaryOperation",
+            "range": {
+              "start": {
+                "line": 22,
+                "column": 8
+              },
+              "end": {
+                "line": 22,
+                "column": 37
+              }
+            },
+            "operator": "==",
+            "left": {
+              "type": "FunctionCall",
+              "range": {
+                "start": {
+                  "line": 22,
+                  "column": 8
+                },
+                "end": {
+                  "line": 22,
+                  "column": 30
+                }
+              },
+              "callee": {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 22,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 17
+                  }
+                },
+                "name": "StringSub"
+              },
+              "arguments": [
+                {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 22,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 19
+                    }
+                  },
+                  "name": "s"
+                },
+                {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 22,
+                      "column": 21
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 24
+                    }
+                  },
+                  "name": "end"
+                },
+                {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 22,
+                      "column": 26
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 29
+                    }
+                  },
+                  "name": "end"
+                }
+              ]
+            },
+            "right": {
+              "type": "StringLiteral",
+              "range": {
+                "start": {
+                  "line": 22,
+                  "column": 36
+                },
+                "end": {
+                  "line": 22,
+                  "column": 37
+                }
+              },
+              "value": " "
+            }
+          },
+          "body": [
+            {
+              "type": "AssignmentStatment",
+              "range": {
+                "start": {
+                  "line": 23,
+                  "column": 2
+                },
+                "end": {
+                  "line": 23,
+                  "column": 16
+                }
+              },
+              "operator": "=",
+              "name": {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 23,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 23,
+                    "column": 5
+                  }
+                },
+                "name": "end"
+              },
+              "value": {
+                "type": "BinaryOperation",
+                "range": {
+                  "start": {
+                    "line": 23,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 23,
+                    "column": 15
+                  }
+                },
+                "operator": "-",
+                "left": {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 23,
+                      "column": 8
+                    },
+                    "end": {
+                      "line": 23,
+                      "column": 11
+                    }
+                  },
+                  "name": "end"
+                },
+                "right": {
+                  "type": "IntegerLiteral",
+                  "range": {
+                    "start": {
+                      "line": 23,
+                      "column": 14
+                    },
+                    "end": {
+                      "line": 23,
+                      "column": 15
+                    }
+                  },
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "ReturnStatment",
+          "range": {
+            "start": {
+              "line": 26,
+              "column": 1
+            },
+            "end": {
+              "line": 26,
+              "column": 33
+            }
+          },
+          "expression": {
+            "type": "FunctionCall",
+            "range": {
+              "start": {
+                "line": 26,
+                "column": 8
+              },
+              "end": {
+                "line": 26,
+                "column": 32
+              }
+            },
+            "callee": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 26,
+                  "column": 8
+                },
+                "end": {
+                  "line": 26,
+                  "column": 17
+                }
+              },
+              "name": "StringSub"
+            },
+            "arguments": [
+              {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 26,
+                    "column": 18
+                  },
+                  "end": {
+                    "line": 26,
+                    "column": 19
+                  }
+                },
+                "name": "s"
+              },
+              {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 26,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 26,
+                    "column": 26
+                  }
+                },
+                "name": "front"
+              },
+              {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 26,
+                    "column": 28
+                  },
+                  "end": {
+                    "line": 26,
+                    "column": 31
+                  }
+                },
+                "name": "end"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

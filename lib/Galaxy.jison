@@ -11,6 +11,12 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 %x COMMENT STRING
 %%
 
+/* Fixed-point Literals */
+{digit}+\.{digit}+ { return 'FIXEDLITERAL'; }
+
+/* Integer Literals */
+{digit}+ { return 'INTEGERLITERAL'; }
+
 /* String literals */
 "\"" { literal = ''; this.begin('STRING'); }
 <STRING>\\. { literal += yytext[1]; }
@@ -24,7 +30,13 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 <COMMENT>[^\n] { /* eat all non-newline characters */ }
 
 "if" { return 'IF'; }
+"else" { return 'ELSE'; }
+"while" { return 'WHILE'; }
+
 "include" { return 'INCLUDE'; }
+
+"true" { return 'TRUE'; }
+"false" { return 'FALSE'; }
 
 "struct" { return 'STRUCT'; }
 
@@ -44,15 +56,28 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 /* Operators */
 "<<" { return 'LSHIFT'; }
 ">>" { return 'RSHIFT'; }
+
+
+"&&" { return 'AND'; }
+"||" { return 'OR'; }
+
+"!=" { return 'NEQUALS'; }
+"==" { return 'DEQUALS'; }
+"<=" { return 'LTEQ'; }
+">=" { return 'GTEQ'; }
+
+/* Assignment Operators */
+"=" { return 'EQUALS'; }
+"+=" { return 'PLUSEQUALS'; }
+"-=" { return 'MINUSEQUALS'; }
+
 "+" { return 'PLUS'; }
 "-" { return 'MINUS'; }
 "*" { return 'MULT'; }
 "/" { return 'DIV'; }
 "%" { return 'MODULUS'; }
 
-/* Assignment Operators */
-"=" { return 'EQUALS'; }
-"+=" { return 'PLUSEQUALS'; }
+"!" { return 'NOT'; }
 
 "(" { return 'LPAREN'; }
 ")" { return 'RPAREN'; }
@@ -63,8 +88,10 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 "[" { return 'LBRACKET'; }
 "]" { return 'RBRACKET'; }
 
+/* Separators */
 ";" { return 'SEMICOLON'; }
 "," { return 'COMMA'; }
+"." { return 'DOT'; }
 
 \s+ { /* skip whitespace */}
 <<EOF>> { return 'EOF'; }
@@ -72,8 +99,13 @@ id [a-zA-Z_][a-zA-Z0-9_]*
 
 %start program
 
+%left OR
+%left AND
+%nonassoc DEQUALS NEQUALS LANGLE RANGLE LTEQ GTEQ
 %left PLUS MINUS
 %left MULT DIV MODULUS
+%left NOT
+%left DOT
 %%
 
 program
@@ -125,8 +157,8 @@ optional_formals : { $$ = []; } | formals;
 optional_actuals : { $$ = []; } | actuals;
 
 statements
-  : statements statement SEMICOLON { $$ = $1.concat($2); }
-  | statement SEMICOLON { $$ = [$1]; }
+  : statements statement { $$ = $1.concat($2); }
+  | statement { $$ = [$1]; }
   ;
 
 formals
@@ -137,7 +169,7 @@ formals
 formal : type_specifier identifier { $$ = ast.Formal(range(@$), $1, $2); };
 
 actuals
-  : actuals COMMA expression { $$ = $1.concat($2); }
+  : actuals COMMA expression { $$ = $1.concat($3); }
   | expression { $$ = [$1]; }
   ;
 
@@ -146,8 +178,12 @@ include
   | INCLUDE string_literal SEMICOLON { $$ = ast.Include(range(@$), $2); }
   ;
 
-string_literal
-  : STRINGLITERAL { $$ = ast.StringLiteral(range(@1), $1);}
+string_literal : STRINGLITERAL { $$ = ast.StringLiteral(range(@1), $1); } ;
+fixed_literal : FIXEDLITERAL { $$ = ast.FixedLiteral(range(@1), $1); } ;
+integer_literal : INTEGERLITERAL { $$ = ast.IntegerLiteral(range(@1), parseInt($1)); } ;
+boolean_literal
+  : TRUE { $$ = ast.BooleanLiteral(range(@1), true); }
+  | FALSE { $$ = ast.BooleanLiteral(range(@1), false); }
   ;
 
 struct_definition
@@ -169,19 +205,80 @@ struct_field
 
 expression
   : string_literal
+  | integer_literal
+  | boolean_literal
+  | fixed_literal
+
   | identifier
   | identifier LPAREN optional_actuals RPAREN
     { $$ = ast.FunctionCall(range(@$), $1, $3); }
+  | expression DOT identifier
+    { $$ = ast.PropertyAccess(range(@$), $1, $3); }
+
+  | expression OR expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+  | expression AND expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+
+  | expression NEQUALS expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+  | expression DEQUALS expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+  | expression LANGLE expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+  | expression RANGLE expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+  | expression LTEQ expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+  | expression GTEQ expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
 
   | expression PLUS expression
     { $$ = ast.BinaryOperation(range(@$), $1, $1, $3); }
   | expression MINUS expression
     { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+
+  | expression MULT expression
+    { $$ = ast.BinaryOperation(range(@$), $1, $1, $3); }
+  | expression DIV expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+  | expression MODULUS expression
+    { $$ = ast.BinaryOperation(range(@$), $2, $1, $3); }
+
+  | NOT expression
+    { $$ = ast.UnaryOperation(range(@$, $1, $2)); }
+  | MINUS expression
+    { $$ = ast.UnaryOperation(range(@$, $1, $2)); }
   ;
 
 statement
-  : variable_declaration
-  | expression { $$ = ast.ExpressionStatement(range(@$), $1); }
+  : variable_declaration SEMICOLON
+  | expression SEMICOLON { $$ = ast.ExpressionStatement(range(@$), $1); }
+  | if_statement
+  | while_statement
+  | identifier assignop expression SEMICOLON { $$ = ast.AssignmentStatment(range(@$), $2, $1, $3); }
+
+  | RETURN expression SEMICOLON { $$ = ast.ReturnStatment(range(@$), $2); }
+  | RETURN SEMICOLON { $$ = ast.ReturnStatment(range(@$), null); }
+  | BREAK SEMICOLON { $$ = ast.BreakStatment(range(@$)); }
+  | CONTINUE SEMICOLON { $$ = ast.ContinueStatment(range(@$)); }
+  ;
+
+assignop : EQUALS | PLUSEQUALS | MINUSEQUALS;
+
+if_statement
+  : IF LPAREN expression RPAREN LBRACE optional_statements RBRACE
+    { $$ = ast.IfStatement(range(@$), $3, $6, null); }
+  | IF LPAREN expression RPAREN LBRACE optional_statements RBRACE ELSE
+    LBRACE optional_statements RBRACE
+    { $$ = ast.IfStatement(range(@$), $3, $6, $10); }
+  | IF LPAREN expression RPAREN LBRACE optional_statements RBRACE ELSE if_statement
+    { $$ = ast.IfStatement(range(@$), $3, $6, [$9]); }
+  ;
+
+while_statement
+  : WHILE LPAREN expression RPAREN LBRACE optional_statements RBRACE
+    { $$ = ast.WhileStatment(range(@$), $3, $6); }
   ;
 
 type_specifier
