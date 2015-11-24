@@ -4,13 +4,15 @@
     "chai": "^3.4.1",
     "eslint": "^1.9.0",
     "fs-walk": "0.0.1",
-    "jison": "^0.4.15",
+    "jison-lex": "^0.3.4",
     "mocha": "^2.3.3"
   },
   "dependencies": {},
   "scripts": {
     "build-lexer": "jison-lex lib/Galaxy.lex -o lib/lexer.js -t commonjs && cat lib/lexer_footer.js >> lib/lexer.js",
-    "build-parser" : "jison lib/Galaxy.jison lib/Galaxy.lex -o lib/index.js -m commonjs -p lr",
     "test": "mocha test/"
+  },
+  "bin": {
+    "galaxy-parser": "bin/galaxy-parser"
   }
 }
