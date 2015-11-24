@@ -9,7 +9,8 @@
   },
   "dependencies": {},
   "scripts": {
-    "build" : "jison lib/Galaxy.jison -o lib/index.js -m commonjs -p lr",
+    "build-lexer": "jison-lex lib/Galaxy.lex -o lib/lexer.js -t commonjs && cat lib/lexer_footer.js >> lib/lexer.js",
+    "build-parser" : "jison lib/Galaxy.jison lib/Galaxy.lex -o lib/index.js -m commonjs -p lr",
     "test": "mocha test/"
   }
 }

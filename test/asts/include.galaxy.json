@@ -2,7 +2,7 @@
   "type": "Program",
   "range": {
     "start": {
-      "line": 2,
+      "line": 0,
       "column": 0
     },
     "end": {
@@ -28,7 +28,7 @@
         "range": {
           "start": {
             "line": 2,
-            "column": 26
+            "column": 8
           },
           "end": {
             "line": 2,
@@ -47,7 +47,7 @@
         },
         "end": {
           "line": 3,
-          "column": 27
+          "column": 28
         }
       },
       "path": {
@@ -55,7 +55,7 @@
         "range": {
           "start": {
             "line": 3,
-            "column": 26
+            "column": 8
           },
           "end": {
             "line": 3,

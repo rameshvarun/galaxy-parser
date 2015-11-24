@@ -2,7 +2,7 @@
   "type": "Program",
   "range": {
     "start": {
-      "line": 1,
+      "line": 0,
       "column": 0
     },
     "end": {
@@ -15,7 +15,7 @@
       "type": "StructDefinition",
       "range": {
         "start": {
-          "line": 1,
+          "line": 3,
           "column": 0
         },
         "end": {
@@ -41,7 +41,7 @@
       "fields": [
         {
           "type": {
-            "type": "TypeSpecifier",
+            "type": "TypeName",
             "range": {
               "start": {
                 "line": 4,
