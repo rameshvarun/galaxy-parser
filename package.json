@@ -1,5 +1,7 @@
 {
   "name": "galaxy-parser",
+  "version": "0.1.0",
+  "main": "lib/index.js",
   "devDependencies": {
     "chai": "^3.4.1",
     "eslint": "^1.9.0",

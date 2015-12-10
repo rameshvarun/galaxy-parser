@@ -1,0 +1,884 @@
+[
+  {
+    "type": "INCLUDE",
+    "text": "include",
+    "range": {
+      "start": {
+        "line": 9,
+        "column": 0
+      },
+      "end": {
+        "line": 9,
+        "column": 7
+      }
+    }
+  },
+  {
+    "type": "STRINGLITERAL",
+    "text": "wyvern/engine/engine.galaxy",
+    "range": {
+      "start": {
+        "line": 9,
+        "column": 8
+      },
+      "end": {
+        "line": 9,
+        "column": 37
+      }
+    }
+  },
+  {
+    "type": "INCLUDE",
+    "text": "include",
+    "range": {
+      "start": {
+        "line": 10,
+        "column": 0
+      },
+      "end": {
+        "line": 10,
+        "column": 7
+      }
+    }
+  },
+  {
+    "type": "STRINGLITERAL",
+    "text": "wyvern/commands/commands.galaxy",
+    "range": {
+      "start": {
+        "line": 10,
+        "column": 8
+      },
+      "end": {
+        "line": 10,
+        "column": 41
+      }
+    }
+  },
+  {
+    "type": "INCLUDE",
+    "text": "include",
+    "range": {
+      "start": {
+        "line": 11,
+        "column": 0
+      },
+      "end": {
+        "line": 11,
+        "column": 7
+      }
+    }
+  },
+  {
+    "type": "STRINGLITERAL",
+    "text": "wyvern/ui/ui.galaxy",
+    "range": {
+      "start": {
+        "line": 11,
+        "column": 8
+      },
+      "end": {
+        "line": 11,
+        "column": 29
+      }
+    }
+  },
+  {
+    "type": "CONST",
+    "text": "const",
+    "range": {
+      "start": {
+        "line": 14,
+        "column": 0
+      },
+      "end": {
+        "line": 14,
+        "column": 5
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "string",
+    "range": {
+      "start": {
+        "line": 14,
+        "column": 6
+      },
+      "end": {
+        "line": 14,
+        "column": 12
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "LIBWYV_SPLASH_MESSAGE",
+    "range": {
+      "start": {
+        "line": 14,
+        "column": 13
+      },
+      "end": {
+        "line": 14,
+        "column": 34
+      }
+    }
+  },
+  {
+    "type": "=",
+    "text": "=",
+    "range": {
+      "start": {
+        "line": 14,
+        "column": 35
+      },
+      "end": {
+        "line": 14,
+        "column": 36
+      }
+    }
+  },
+  {
+    "type": "STRINGLITERAL",
+    "text": "Welcome to Wyvern Roleplay Engine. This is still in beta, so there are a lot of features still being added. Type \">commands\" to get started!",
+    "range": {
+      "start": {
+        "line": 14,
+        "column": 37
+      },
+      "end": {
+        "line": 14,
+        "column": 181
+      }
+    }
+  },
+  {
+    "type": ";",
+    "text": ";",
+    "range": {
+      "start": {
+        "line": 14,
+        "column": 181
+      },
+      "end": {
+        "line": 14,
+        "column": 182
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "void",
+    "range": {
+      "start": {
+        "line": 16,
+        "column": 0
+      },
+      "end": {
+        "line": 16,
+        "column": 4
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "libwyv_initialize",
+    "range": {
+      "start": {
+        "line": 16,
+        "column": 5
+      },
+      "end": {
+        "line": 16,
+        "column": 22
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 16,
+        "column": 22
+      },
+      "end": {
+        "line": 16,
+        "column": 23
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 16,
+        "column": 23
+      },
+      "end": {
+        "line": 16,
+        "column": 24
+      }
+    }
+  },
+  {
+    "type": "{",
+    "text": "{",
+    "range": {
+      "start": {
+        "line": 16,
+        "column": 25
+      },
+      "end": {
+        "line": 16,
+        "column": 26
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "libwyv_engine_initialize",
+    "range": {
+      "start": {
+        "line": 17,
+        "column": 1
+      },
+      "end": {
+        "line": 17,
+        "column": 25
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 17,
+        "column": 25
+      },
+      "end": {
+        "line": 17,
+        "column": 26
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 17,
+        "column": 26
+      },
+      "end": {
+        "line": 17,
+        "column": 27
+      }
+    }
+  },
+  {
+    "type": ";",
+    "text": ";",
+    "range": {
+      "start": {
+        "line": 17,
+        "column": 27
+      },
+      "end": {
+        "line": 17,
+        "column": 28
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "libwyv_commands_initialize",
+    "range": {
+      "start": {
+        "line": 18,
+        "column": 1
+      },
+      "end": {
+        "line": 18,
+        "column": 27
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 18,
+        "column": 27
+      },
+      "end": {
+        "line": 18,
+        "column": 28
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 18,
+        "column": 28
+      },
+      "end": {
+        "line": 18,
+        "column": 29
+      }
+    }
+  },
+  {
+    "type": ";",
+    "text": ";",
+    "range": {
+      "start": {
+        "line": 18,
+        "column": 29
+      },
+      "end": {
+        "line": 18,
+        "column": 30
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "libwyv_ui_initialize",
+    "range": {
+      "start": {
+        "line": 19,
+        "column": 1
+      },
+      "end": {
+        "line": 19,
+        "column": 21
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 19,
+        "column": 21
+      },
+      "end": {
+        "line": 19,
+        "column": 22
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 19,
+        "column": 22
+      },
+      "end": {
+        "line": 19,
+        "column": 23
+      }
+    }
+  },
+  {
+    "type": ";",
+    "text": ";",
+    "range": {
+      "start": {
+        "line": 19,
+        "column": 23
+      },
+      "end": {
+        "line": 19,
+        "column": 24
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "libwyv_print",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 1
+      },
+      "end": {
+        "line": 21,
+        "column": 13
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 13
+      },
+      "end": {
+        "line": 21,
+        "column": 14
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "PlayerGroupAll",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 14
+      },
+      "end": {
+        "line": 21,
+        "column": 28
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 28
+      },
+      "end": {
+        "line": 21,
+        "column": 29
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 29
+      },
+      "end": {
+        "line": 21,
+        "column": 30
+      }
+    }
+  },
+  {
+    "type": ",",
+    "text": ",",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 30
+      },
+      "end": {
+        "line": 21,
+        "column": 31
+      }
+    }
+  },
+  {
+    "type": "STRINGLITERAL",
+    "text": "Wyvern Engine: v",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 32
+      },
+      "end": {
+        "line": 21,
+        "column": 50
+      }
+    }
+  },
+  {
+    "type": "+",
+    "text": "+",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 51
+      },
+      "end": {
+        "line": 21,
+        "column": 52
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "IntToString",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 53
+      },
+      "end": {
+        "line": 21,
+        "column": 64
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 64
+      },
+      "end": {
+        "line": 21,
+        "column": 65
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "LIBWYV_BUILD_VERSION",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 65
+      },
+      "end": {
+        "line": 21,
+        "column": 85
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 85
+      },
+      "end": {
+        "line": 21,
+        "column": 86
+      }
+    }
+  },
+  {
+    "type": "+",
+    "text": "+",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 87
+      },
+      "end": {
+        "line": 21,
+        "column": 88
+      }
+    }
+  },
+  {
+    "type": "STRINGLITERAL",
+    "text": ".",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 89
+      },
+      "end": {
+        "line": 21,
+        "column": 92
+      }
+    }
+  },
+  {
+    "type": "+",
+    "text": "+",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 93
+      },
+      "end": {
+        "line": 21,
+        "column": 94
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "IntToString",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 95
+      },
+      "end": {
+        "line": 21,
+        "column": 106
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 106
+      },
+      "end": {
+        "line": 21,
+        "column": 107
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "LIBWYV_BUILD_SUB_VERSION",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 107
+      },
+      "end": {
+        "line": 21,
+        "column": 131
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 131
+      },
+      "end": {
+        "line": 21,
+        "column": 132
+      }
+    }
+  },
+  {
+    "type": "+",
+    "text": "+",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 133
+      },
+      "end": {
+        "line": 21,
+        "column": 134
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "LIBWYV_BUILD_VERSION_MODIFIER",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 135
+      },
+      "end": {
+        "line": 21,
+        "column": 164
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 164
+      },
+      "end": {
+        "line": 21,
+        "column": 165
+      }
+    }
+  },
+  {
+    "type": ";",
+    "text": ";",
+    "range": {
+      "start": {
+        "line": 21,
+        "column": 165
+      },
+      "end": {
+        "line": 21,
+        "column": 166
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "libwyv_print",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 1
+      },
+      "end": {
+        "line": 22,
+        "column": 13
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 13
+      },
+      "end": {
+        "line": 22,
+        "column": 14
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "PlayerGroupAll",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 14
+      },
+      "end": {
+        "line": 22,
+        "column": 28
+      }
+    }
+  },
+  {
+    "type": "(",
+    "text": "(",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 28
+      },
+      "end": {
+        "line": 22,
+        "column": 29
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 29
+      },
+      "end": {
+        "line": 22,
+        "column": 30
+      }
+    }
+  },
+  {
+    "type": ",",
+    "text": ",",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 30
+      },
+      "end": {
+        "line": 22,
+        "column": 31
+      }
+    }
+  },
+  {
+    "type": "ID",
+    "text": "LIBWYV_SPLASH_MESSAGE",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 32
+      },
+      "end": {
+        "line": 22,
+        "column": 53
+      }
+    }
+  },
+  {
+    "type": ")",
+    "text": ")",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 53
+      },
+      "end": {
+        "line": 22,
+        "column": 54
+      }
+    }
+  },
+  {
+    "type": ";",
+    "text": ";",
+    "range": {
+      "start": {
+        "line": 22,
+        "column": 54
+      },
+      "end": {
+        "line": 22,
+        "column": 55
+      }
+    }
+  },
+  {
+    "type": "}",
+    "text": "}",
+    "range": {
+      "start": {
+        "line": 23,
+        "column": 0
+      },
+      "end": {
+        "line": 23,
+        "column": 1
+      }
+    }
+  },
+  {
+    "type": "EOF",
+    "text": "",
+    "range": {
+      "start": {
+        "line": 24,
+        "column": 0
+      },
+      "end": {
+        "line": 24,
+        "column": 0
+      }
+    }
+  }
+]

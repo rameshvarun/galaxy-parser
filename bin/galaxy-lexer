@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var fs = require('fs');
+var parser = require('../lib');
+
+if (process.argv.length != 3) {
+  console.error("This script takes exactly one argument (the file to parse).");
+} else {
+  var tokens = parser.lexer(fs.readFileSync(process.argv[2], 'utf-8'));
+  process.stdout.write(JSON.stringify(tokens, null, 2));
+}
