@@ -1,0 +1,7 @@
+{
+  "message": "Parse Error: expected Struct Definition at line 1, column 7, got {",
+  "location": {
+    "column": 7,
+    "line": 1
+  }
+}

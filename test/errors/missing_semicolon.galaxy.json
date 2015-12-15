@@ -1,5 +1,5 @@
 {
-  "message": "expected one of Semicolon (;), '>>=', '<<=', '^=', '|=', '&=', '%=', '/=', '*=', '-=', '+=', '=', '||', '&&', '!=', '==', '>', '>=', '<=', '<', '|', '^', '&', '>>', '<<', '-', '+', '%', '/', '*', '[', '.' at line 4, column 0, got ID",
+  "message": "Parse Error: expected Global Declaration at line 4, column 0, got ID",
   "location": {
     "line": 4,
     "column": 0

@@ -1,0 +1,7 @@
+{
+  "message": "Lexical error on line 1. Unrecognized text.\nint x = 3 # 4;\n----------^",
+  "location": {
+    "line": 1,
+    "column": 9
+  }
+}
