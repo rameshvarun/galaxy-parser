@@ -1,3 +1,5 @@
+require('chai').should();
+
 var lexer = require('../lib/lexer.js');
 var fs = require('fs');
 var path = require('path');
@@ -31,7 +33,7 @@ describe('Galaxy Lexer', function() {
         var expectedFile = path.join(tokens_dir, rel_dir, filename) + '.json';
         if (fs.existsSync(expectedFile)) {
           var expected = JSON.parse(fs.readFileSync(expectedFile, 'utf-8'));
-          assert.deepEqual(tokens, expected);
+          tokens.should.deep.equal(expected);
         }
       });
     }

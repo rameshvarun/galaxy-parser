@@ -24,7 +24,7 @@
         }
       },
       "isStatic": false,
-      "name": {
+      "id": {
         "type": "Identifier",
         "range": {
           "start": {
@@ -40,7 +40,8 @@
       },
       "fields": [
         {
-          "type": {
+          "type": "StructField",
+          "typeSpecifier": {
             "type": "TypeName",
             "range": {
               "start": {
@@ -52,7 +53,7 @@
                 "column": 5
               }
             },
-            "name": {
+            "id": {
               "type": "Identifier",
               "range": {
                 "start": {
@@ -77,7 +78,7 @@
               "column": 15
             }
           },
-          "name": {
+          "id": {
             "type": "Identifier",
             "range": {
               "start": {

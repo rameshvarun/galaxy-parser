@@ -2,7 +2,7 @@
   "type": "Program",
   "range": {
     "start": {
-      "line": 9,
+      "line": 0,
       "column": 0
     },
     "end": {
@@ -28,7 +28,7 @@
         "range": {
           "start": {
             "line": 9,
-            "column": 36
+            "column": 8
           },
           "end": {
             "line": 9,
@@ -55,7 +55,7 @@
         "range": {
           "start": {
             "line": 10,
-            "column": 40
+            "column": 8
           },
           "end": {
             "line": 10,
@@ -82,7 +82,7 @@
         "range": {
           "start": {
             "line": 11,
-            "column": 28
+            "column": 8
           },
           "end": {
             "line": 11,
@@ -105,8 +105,61 @@
         }
       },
       "isStatic": false,
-      "isConst": true,
-      "declaration": ";"
+      "declaration": {
+        "id": {
+          "name": "LIBWYV_SPLASH_MESSAGE",
+          "type": "Identifier",
+          "range": {
+            "start": {
+              "column": 13,
+              "line": 14
+            },
+            "end": {
+              "column": 34,
+              "line": 14
+            }
+          }
+        },
+        "isConst": true,
+        "range": {
+          "start": {
+            "column": 0,
+            "line": 14
+          },
+          "end": {
+            "column": 181,
+            "line": 14
+          }
+        },
+        "type": "VariableDeclaration",
+        "typeSpecifier": {
+          "id": {
+            "name": "string",
+            "range": {
+              "start": {
+                "line": 14,
+                "column": 6
+              },
+              "end": {
+                "column": 12,
+                "line": 14
+              }
+            },
+            "type": "Identifier"
+          },
+          "range": {
+            "start": {
+              "line": 14,
+              "column": 6
+            },
+            "end": {
+              "column": 12,
+              "line": 14
+            }
+          },
+          "type": "TypeName"
+        }
+      }
     },
     {
       "type": "FunctionDefinition",
@@ -134,21 +187,47 @@
         },
         "isStatic": false,
         "returnType": {
-          "type": "Identifier",
+          "type": "TypeName",
           "range": {
             "start": {
               "line": 16,
-              "column": 5
+              "column": 0
             },
             "end": {
               "line": 16,
-              "column": 22
+              "column": 4
             }
           },
-          "name": "libwyv_initialize"
+          "id": {
+            "name": "void",
+            "range": {
+              "start": {
+                "column": 0,
+                "line": 16
+              },
+              "end": {
+                "column": 4,
+                "line": 16
+              }
+            },
+            "type": "Identifier"
+          }
         },
-        "name": "(",
-        "arguments": ")"
+        "id": {
+          "name": "libwyv_initialize",
+          "range": {
+            "end": {
+              "column": 22,
+              "line": 16
+            },
+            "start": {
+              "column": 5,
+              "line": 16
+            }
+          },
+          "type": "Identifier"
+        },
+        "arguments": []
       },
       "body": [
         {
@@ -160,7 +239,7 @@
             },
             "end": {
               "line": 17,
-              "column": 28
+              "column": 27
             }
           },
           "expression": {
@@ -201,7 +280,7 @@
             },
             "end": {
               "line": 18,
-              "column": 30
+              "column": 29
             }
           },
           "expression": {
@@ -242,7 +321,7 @@
             },
             "end": {
               "line": 19,
-              "column": 24
+              "column": 23
             }
           },
           "expression": {
@@ -283,7 +362,7 @@
             },
             "end": {
               "line": 21,
-              "column": 166
+              "column": 165
             }
           },
           "expression": {
@@ -346,794 +425,59 @@
                 "range": {
                   "start": {
                     "line": 21,
-                    "column": 49
+                    "column": 32
                   },
                   "end": {
                     "line": 21,
                     "column": 164
                   }
                 },
-                "operator": {
-                  "type": "BinaryOperation",
-                  "range": {
-                    "start": {
-                      "line": 21,
-                      "column": 49
-                    },
-                    "end": {
-                      "line": 21,
-                      "column": 132
-                    }
-                  },
-                  "operator": {
-                    "type": "BinaryOperation",
-                    "range": {
-                      "start": {
-                        "line": 21,
-                        "column": 49
-                      },
-                      "end": {
-                        "line": 21,
-                        "column": 92
-                      }
-                    },
-                    "operator": {
-                      "type": "BinaryOperation",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 49
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 86
-                        }
-                      },
-                      "operator": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "left": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "right": {
-                        "type": "FunctionCall",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 53
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 86
-                          }
-                        },
-                        "callee": {
-                          "type": "Identifier",
-                          "range": {
-                            "start": {
-                              "line": 21,
-                              "column": 53
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 64
-                            }
-                          },
-                          "name": "IntToString"
-                        },
-                        "arguments": [
-                          {
-                            "type": "Identifier",
-                            "range": {
-                              "start": {
-                                "line": 21,
-                                "column": 65
-                              },
-                              "end": {
-                                "line": 21,
-                                "column": 85
-                              }
-                            },
-                            "name": "LIBWYV_BUILD_VERSION"
-                          }
-                        ]
-                      }
-                    },
-                    "left": {
-                      "type": "BinaryOperation",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 49
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 86
-                        }
-                      },
-                      "operator": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "left": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "right": {
-                        "type": "FunctionCall",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 53
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 86
-                          }
-                        },
-                        "callee": {
-                          "type": "Identifier",
-                          "range": {
-                            "start": {
-                              "line": 21,
-                              "column": 53
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 64
-                            }
-                          },
-                          "name": "IntToString"
-                        },
-                        "arguments": [
-                          {
-                            "type": "Identifier",
-                            "range": {
-                              "start": {
-                                "line": 21,
-                                "column": 65
-                              },
-                              "end": {
-                                "line": 21,
-                                "column": 85
-                              }
-                            },
-                            "name": "LIBWYV_BUILD_VERSION"
-                          }
-                        ]
-                      }
-                    },
-                    "right": {
-                      "type": "StringLiteral",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 91
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 92
-                        }
-                      },
-                      "value": "."
-                    }
-                  },
-                  "left": {
-                    "type": "BinaryOperation",
-                    "range": {
-                      "start": {
-                        "line": 21,
-                        "column": 49
-                      },
-                      "end": {
-                        "line": 21,
-                        "column": 92
-                      }
-                    },
-                    "operator": {
-                      "type": "BinaryOperation",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 49
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 86
-                        }
-                      },
-                      "operator": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "left": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "right": {
-                        "type": "FunctionCall",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 53
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 86
-                          }
-                        },
-                        "callee": {
-                          "type": "Identifier",
-                          "range": {
-                            "start": {
-                              "line": 21,
-                              "column": 53
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 64
-                            }
-                          },
-                          "name": "IntToString"
-                        },
-                        "arguments": [
-                          {
-                            "type": "Identifier",
-                            "range": {
-                              "start": {
-                                "line": 21,
-                                "column": 65
-                              },
-                              "end": {
-                                "line": 21,
-                                "column": 85
-                              }
-                            },
-                            "name": "LIBWYV_BUILD_VERSION"
-                          }
-                        ]
-                      }
-                    },
-                    "left": {
-                      "type": "BinaryOperation",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 49
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 86
-                        }
-                      },
-                      "operator": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "left": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "right": {
-                        "type": "FunctionCall",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 53
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 86
-                          }
-                        },
-                        "callee": {
-                          "type": "Identifier",
-                          "range": {
-                            "start": {
-                              "line": 21,
-                              "column": 53
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 64
-                            }
-                          },
-                          "name": "IntToString"
-                        },
-                        "arguments": [
-                          {
-                            "type": "Identifier",
-                            "range": {
-                              "start": {
-                                "line": 21,
-                                "column": 65
-                              },
-                              "end": {
-                                "line": 21,
-                                "column": 85
-                              }
-                            },
-                            "name": "LIBWYV_BUILD_VERSION"
-                          }
-                        ]
-                      }
-                    },
-                    "right": {
-                      "type": "StringLiteral",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 91
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 92
-                        }
-                      },
-                      "value": "."
-                    }
-                  },
-                  "right": {
-                    "type": "FunctionCall",
-                    "range": {
-                      "start": {
-                        "line": 21,
-                        "column": 95
-                      },
-                      "end": {
-                        "line": 21,
-                        "column": 132
-                      }
-                    },
-                    "callee": {
-                      "type": "Identifier",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 95
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 106
-                        }
-                      },
-                      "name": "IntToString"
-                    },
-                    "arguments": [
-                      {
-                        "type": "Identifier",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 107
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 131
-                          }
-                        },
-                        "name": "LIBWYV_BUILD_SUB_VERSION"
-                      }
-                    ]
-                  }
-                },
+                "operator": "+",
                 "left": {
                   "type": "BinaryOperation",
                   "range": {
                     "start": {
                       "line": 21,
-                      "column": 49
+                      "column": 32
                     },
                     "end": {
                       "line": 21,
                       "column": 132
                     }
                   },
-                  "operator": {
-                    "type": "BinaryOperation",
-                    "range": {
-                      "start": {
-                        "line": 21,
-                        "column": 49
-                      },
-                      "end": {
-                        "line": 21,
-                        "column": 92
-                      }
-                    },
-                    "operator": {
-                      "type": "BinaryOperation",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 49
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 86
-                        }
-                      },
-                      "operator": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "left": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "right": {
-                        "type": "FunctionCall",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 53
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 86
-                          }
-                        },
-                        "callee": {
-                          "type": "Identifier",
-                          "range": {
-                            "start": {
-                              "line": 21,
-                              "column": 53
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 64
-                            }
-                          },
-                          "name": "IntToString"
-                        },
-                        "arguments": [
-                          {
-                            "type": "Identifier",
-                            "range": {
-                              "start": {
-                                "line": 21,
-                                "column": 65
-                              },
-                              "end": {
-                                "line": 21,
-                                "column": 85
-                              }
-                            },
-                            "name": "LIBWYV_BUILD_VERSION"
-                          }
-                        ]
-                      }
-                    },
-                    "left": {
-                      "type": "BinaryOperation",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 49
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 86
-                        }
-                      },
-                      "operator": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "left": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "right": {
-                        "type": "FunctionCall",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 53
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 86
-                          }
-                        },
-                        "callee": {
-                          "type": "Identifier",
-                          "range": {
-                            "start": {
-                              "line": 21,
-                              "column": 53
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 64
-                            }
-                          },
-                          "name": "IntToString"
-                        },
-                        "arguments": [
-                          {
-                            "type": "Identifier",
-                            "range": {
-                              "start": {
-                                "line": 21,
-                                "column": 65
-                              },
-                              "end": {
-                                "line": 21,
-                                "column": 85
-                              }
-                            },
-                            "name": "LIBWYV_BUILD_VERSION"
-                          }
-                        ]
-                      }
-                    },
-                    "right": {
-                      "type": "StringLiteral",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 91
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 92
-                        }
-                      },
-                      "value": "."
-                    }
-                  },
+                  "operator": "+",
                   "left": {
                     "type": "BinaryOperation",
                     "range": {
                       "start": {
                         "line": 21,
-                        "column": 49
+                        "column": 32
                       },
                       "end": {
                         "line": 21,
                         "column": 92
                       }
                     },
-                    "operator": {
-                      "type": "BinaryOperation",
-                      "range": {
-                        "start": {
-                          "line": 21,
-                          "column": 49
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 86
-                        }
-                      },
-                      "operator": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "left": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
-                      "right": {
-                        "type": "FunctionCall",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 53
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 86
-                          }
-                        },
-                        "callee": {
-                          "type": "Identifier",
-                          "range": {
-                            "start": {
-                              "line": 21,
-                              "column": 53
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 64
-                            }
-                          },
-                          "name": "IntToString"
-                        },
-                        "arguments": [
-                          {
-                            "type": "Identifier",
-                            "range": {
-                              "start": {
-                                "line": 21,
-                                "column": 65
-                              },
-                              "end": {
-                                "line": 21,
-                                "column": 85
-                              }
-                            },
-                            "name": "LIBWYV_BUILD_VERSION"
-                          }
-                        ]
-                      }
-                    },
+                    "operator": "+",
                     "left": {
                       "type": "BinaryOperation",
                       "range": {
                         "start": {
                           "line": 21,
-                          "column": 49
+                          "column": 32
                         },
                         "end": {
                           "line": 21,
                           "column": 86
                         }
                       },
-                      "operator": {
-                        "type": "StringLiteral",
-                        "range": {
-                          "start": {
-                            "line": 21,
-                            "column": 49
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 50
-                          }
-                        },
-                        "value": "Wyvern Engine: v"
-                      },
+                      "operator": "+",
                       "left": {
                         "type": "StringLiteral",
                         "range": {
                           "start": {
                             "line": 21,
-                            "column": 49
+                            "column": 32
                           },
                           "end": {
                             "line": 21,
@@ -1191,7 +535,7 @@
                       "range": {
                         "start": {
                           "line": 21,
-                          "column": 91
+                          "column": 89
                         },
                         "end": {
                           "line": 21,
@@ -1272,7 +616,7 @@
             },
             "end": {
               "line": 22,
-              "column": 55
+              "column": 54
             }
           },
           "expression": {

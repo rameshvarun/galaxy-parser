@@ -1,7 +1,8 @@
+require('chai').should();
+
 var parser = require('../lib/index.js');
 var fs = require('fs');
 var path = require('path');
-var assert = require('chai').assert;
 var walk = require('fs-walk');
 
 var sources_dir = path.join(__dirname, 'galaxy/');
@@ -31,7 +32,7 @@ describe('galaxy-parser', function() {
         var expectedFile = path.join(asts_dir, rel_dir, filename) + '.json';
         if (fs.existsSync(expectedFile)) {
           var expected = JSON.parse(fs.readFileSync(expectedFile, 'utf-8'));
-          assert.deepEqual(ast, expected);
+          ast.should.deep.equal(expected);
         }
       });
     }

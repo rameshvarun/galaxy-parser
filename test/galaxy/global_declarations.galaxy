@@ -1,0 +1,3 @@
+static const int static_var = 0;
+const int nonstatic_var = 3 + 3;
+string var = "StringLiteral";

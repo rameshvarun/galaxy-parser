@@ -1,0 +1,5 @@
+// Missing Semicolon Test
+static const int TEST = 0
+
+int Main() {
+}
