@@ -26,6 +26,17 @@
       "isStatic": true,
       "declaration": {
         "type": "VariableDeclaration",
+        "range": {
+          "start": {
+            "line": 1,
+            "column": 7
+          },
+          "end": {
+            "line": 1,
+            "column": 31
+          }
+        },
+        "isConst": true,
         "typeSpecifier": {
           "type": "TypeName",
           "range": {
@@ -53,17 +64,6 @@
             "name": "int"
           }
         },
-        "range": {
-          "start": {
-            "line": 1,
-            "column": 7
-          },
-          "end": {
-            "line": 1,
-            "column": 31
-          }
-        },
-        "isConst": true,
         "id": {
           "type": "Identifier",
           "range": {
@@ -77,6 +77,20 @@
             }
           },
           "name": "static_var"
+        },
+        "initializer": {
+          "type": "IntegerLiteral",
+          "range": {
+            "start": {
+              "line": 1,
+              "column": 30
+            },
+            "end": {
+              "line": 1,
+              "column": 31
+            }
+          },
+          "value": 0
         }
       }
     },
@@ -95,6 +109,17 @@
       "isStatic": false,
       "declaration": {
         "type": "VariableDeclaration",
+        "range": {
+          "start": {
+            "line": 2,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 31
+          }
+        },
+        "isConst": true,
         "typeSpecifier": {
           "type": "TypeName",
           "range": {
@@ -122,17 +147,6 @@
             "name": "int"
           }
         },
-        "range": {
-          "start": {
-            "line": 2,
-            "column": 0
-          },
-          "end": {
-            "line": 2,
-            "column": 31
-          }
-        },
-        "isConst": true,
         "id": {
           "type": "Identifier",
           "range": {
@@ -146,6 +160,48 @@
             }
           },
           "name": "nonstatic_var"
+        },
+        "initializer": {
+          "type": "BinaryOperation",
+          "range": {
+            "start": {
+              "line": 2,
+              "column": 26
+            },
+            "end": {
+              "line": 2,
+              "column": 31
+            }
+          },
+          "operator": "+",
+          "left": {
+            "type": "IntegerLiteral",
+            "range": {
+              "start": {
+                "line": 2,
+                "column": 26
+              },
+              "end": {
+                "line": 2,
+                "column": 27
+              }
+            },
+            "value": 3
+          },
+          "right": {
+            "type": "IntegerLiteral",
+            "range": {
+              "start": {
+                "line": 2,
+                "column": 30
+              },
+              "end": {
+                "line": 2,
+                "column": 31
+              }
+            },
+            "value": 3
+          }
         }
       }
     },
@@ -164,6 +220,17 @@
       "isStatic": false,
       "declaration": {
         "type": "VariableDeclaration",
+        "range": {
+          "start": {
+            "line": 3,
+            "column": 0
+          },
+          "end": {
+            "line": 3,
+            "column": 28
+          }
+        },
+        "isConst": false,
         "typeSpecifier": {
           "type": "TypeName",
           "range": {
@@ -191,17 +258,6 @@
             "name": "string"
           }
         },
-        "range": {
-          "start": {
-            "line": 3,
-            "column": 0
-          },
-          "end": {
-            "line": 3,
-            "column": 28
-          }
-        },
-        "isConst": false,
         "id": {
           "type": "Identifier",
           "range": {
@@ -215,6 +271,20 @@
             }
           },
           "name": "var"
+        },
+        "initializer": {
+          "type": "StringLiteral",
+          "range": {
+            "start": {
+              "line": 3,
+              "column": 13
+            },
+            "end": {
+              "line": 3,
+              "column": 28
+            }
+          },
+          "value": "StringLiteral"
         }
       }
     }

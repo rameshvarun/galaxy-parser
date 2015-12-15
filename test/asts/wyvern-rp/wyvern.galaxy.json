@@ -106,58 +106,72 @@
       },
       "isStatic": false,
       "declaration": {
-        "id": {
-          "name": "LIBWYV_SPLASH_MESSAGE",
-          "type": "Identifier",
-          "range": {
-            "start": {
-              "column": 13,
-              "line": 14
-            },
-            "end": {
-              "column": 34,
-              "line": 14
-            }
+        "type": "VariableDeclaration",
+        "range": {
+          "start": {
+            "line": 14,
+            "column": 0
+          },
+          "end": {
+            "line": 14,
+            "column": 181
           }
         },
         "isConst": true,
-        "range": {
-          "start": {
-            "column": 0,
-            "line": 14
-          },
-          "end": {
-            "column": 181,
-            "line": 14
-          }
-        },
-        "type": "VariableDeclaration",
         "typeSpecifier": {
-          "id": {
-            "name": "string",
-            "range": {
-              "start": {
-                "line": 14,
-                "column": 6
-              },
-              "end": {
-                "column": 12,
-                "line": 14
-              }
-            },
-            "type": "Identifier"
-          },
+          "type": "TypeName",
           "range": {
             "start": {
               "line": 14,
               "column": 6
             },
             "end": {
-              "column": 12,
-              "line": 14
+              "line": 14,
+              "column": 12
             }
           },
-          "type": "TypeName"
+          "id": {
+            "type": "Identifier",
+            "range": {
+              "start": {
+                "line": 14,
+                "column": 6
+              },
+              "end": {
+                "line": 14,
+                "column": 12
+              }
+            },
+            "name": "string"
+          }
+        },
+        "id": {
+          "type": "Identifier",
+          "range": {
+            "start": {
+              "line": 14,
+              "column": 13
+            },
+            "end": {
+              "line": 14,
+              "column": 34
+            }
+          },
+          "name": "LIBWYV_SPLASH_MESSAGE"
+        },
+        "initializer": {
+          "type": "StringLiteral",
+          "range": {
+            "start": {
+              "line": 14,
+              "column": 37
+            },
+            "end": {
+              "line": 14,
+              "column": 181
+            }
+          },
+          "value": "Welcome to Wyvern Roleplay Engine. This is still in beta, so there are a lot of features still being added. Type \">commands\" to get started!"
         }
       }
     },
@@ -199,33 +213,33 @@
             }
           },
           "id": {
-            "name": "void",
+            "type": "Identifier",
             "range": {
               "start": {
-                "column": 0,
-                "line": 16
+                "line": 16,
+                "column": 0
               },
               "end": {
-                "column": 4,
-                "line": 16
+                "line": 16,
+                "column": 4
               }
             },
-            "type": "Identifier"
+            "name": "void"
           }
         },
         "id": {
-          "name": "libwyv_initialize",
+          "type": "Identifier",
           "range": {
-            "end": {
-              "column": 22,
-              "line": 16
-            },
             "start": {
-              "column": 5,
-              "line": 16
+              "line": 16,
+              "column": 5
+            },
+            "end": {
+              "line": 16,
+              "column": 22
             }
           },
-          "type": "Identifier"
+          "name": "libwyv_initialize"
         },
         "arguments": []
       },

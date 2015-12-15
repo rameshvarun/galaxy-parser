@@ -2,7 +2,7 @@
   "type": "Program",
   "range": {
     "start": {
-      "line": 12,
+      "line": 0,
       "column": 0
     },
     "end": {
@@ -50,8 +50,7 @@
           },
           "name": "libwyv_string_trim"
         },
-        "name": "(",
-        "arguments": ")"
+        "arguments": []
       },
       "body": [
         {
@@ -92,7 +91,7 @@
               "column": 14
             }
           },
-          "name": {
+          "id": {
             "type": "Identifier",
             "range": {
               "start": {
@@ -106,6 +105,7 @@
             },
             "name": "front"
           },
+          "isConst": false,
           "initializer": {
             "type": "IntegerLiteral",
             "range": {

@@ -2,7 +2,7 @@
   "type": "Program",
   "range": {
     "start": {
-      "line": 9,
+      "line": 0,
       "column": 0
     },
     "end": {
@@ -28,7 +28,7 @@
         "range": {
           "start": {
             "line": 9,
-            "column": 44
+            "column": 8
           },
           "end": {
             "line": 9,
@@ -55,7 +55,7 @@
         "range": {
           "start": {
             "line": 10,
-            "column": 43
+            "column": 8
           },
           "end": {
             "line": 10,
@@ -79,6 +79,7 @@
       },
       "declaration": {
         "type": "FunctionDeclaration",
+        "arguments": [],
         "range": {
           "start": {
             "line": 12,
@@ -91,21 +92,46 @@
         },
         "isStatic": false,
         "returnType": {
-          "type": "Identifier",
+          "type": "TypeName",
           "range": {
             "start": {
               "line": 12,
-              "column": 5
+              "column": 0
             },
             "end": {
               "line": 12,
-              "column": 24
+              "column": 4
             }
           },
-          "name": "libwyv_scripts_init"
+          "id": {
+            "name": "void",
+            "type": "Identifier",
+            "range": {
+              "start": {
+                "line": 12,
+                "column": 0
+              },
+              "end": {
+                "column": 4,
+                "line": 12
+              }
+            }
+          }
         },
-        "name": "(",
-        "arguments": ")"
+        "id": {
+          "name": "libwyv_scripts_init",
+          "range": {
+            "start": {
+              "column": 5,
+              "line": 12
+            },
+            "end": {
+              "column": 24,
+              "line": 12
+            }
+          },
+          "type": "Identifier"
+        }
       },
       "body": [
         {
@@ -117,7 +143,7 @@
             },
             "end": {
               "line": 13,
-              "column": 19
+              "column": 18
             }
           },
           "expression": {
