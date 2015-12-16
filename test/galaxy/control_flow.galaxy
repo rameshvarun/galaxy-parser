@@ -1,0 +1,18 @@
+void Main() {
+  int x = 0;
+  if (true) {
+
+  } else if (false) {
+
+  } else {
+
+  }
+
+  while (false) {
+    ++x;
+  }
+
+  for (x = 0; x < 5; ++x) {
+    ConsoleLog(3);
+  }
+}

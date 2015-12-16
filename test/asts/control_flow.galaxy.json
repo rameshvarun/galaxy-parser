@@ -1,0 +1,493 @@
+{
+  "type": "Program",
+  "range": {
+    "start": {
+      "line": 0,
+      "column": 0
+    },
+    "end": {
+      "line": 19,
+      "column": 0
+    }
+  },
+  "declarations": [
+    {
+      "type": "FunctionDefinition",
+      "range": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 1
+        }
+      },
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "range": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 11
+          }
+        },
+        "isStatic": false,
+        "returnType": {
+          "type": "TypeName",
+          "range": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 4
+            }
+          },
+          "id": {
+            "type": "Identifier",
+            "range": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 4
+              }
+            },
+            "name": "void"
+          }
+        },
+        "id": {
+          "type": "Identifier",
+          "range": {
+            "start": {
+              "line": 1,
+              "column": 5
+            },
+            "end": {
+              "line": 1,
+              "column": 9
+            }
+          },
+          "name": "Main"
+        },
+        "arguments": []
+      },
+      "body": [
+        {
+          "type": "VariableDeclaration",
+          "range": {
+            "start": {
+              "line": 2,
+              "column": 2
+            },
+            "end": {
+              "line": 2,
+              "column": 11
+            }
+          },
+          "isConst": false,
+          "typeSpecifier": {
+            "type": "TypeName",
+            "range": {
+              "start": {
+                "line": 2,
+                "column": 2
+              },
+              "end": {
+                "line": 2,
+                "column": 5
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 2,
+                  "column": 2
+                },
+                "end": {
+                  "line": 2,
+                  "column": 5
+                }
+              },
+              "name": "int"
+            }
+          },
+          "id": {
+            "type": "Identifier",
+            "range": {
+              "start": {
+                "line": 2,
+                "column": 6
+              },
+              "end": {
+                "line": 2,
+                "column": 7
+              }
+            },
+            "name": "x"
+          },
+          "initializer": {
+            "type": "IntegerLiteral",
+            "range": {
+              "start": {
+                "line": 2,
+                "column": 10
+              },
+              "end": {
+                "line": 2,
+                "column": 11
+              }
+            },
+            "value": 0
+          }
+        },
+        {
+          "type": "IfStatement",
+          "range": {
+            "start": {
+              "line": 3,
+              "column": 2
+            },
+            "end": {
+              "line": 7,
+              "column": 3
+            }
+          },
+          "test": {
+            "type": "BooleanLiteral",
+            "range": {
+              "start": {
+                "line": 3,
+                "column": 6
+              },
+              "end": {
+                "line": 3,
+                "column": 10
+              }
+            },
+            "value": true
+          },
+          "consequent": [],
+          "alternate": {
+            "type": "IfStatement",
+            "range": {
+              "start": {
+                "line": 5,
+                "column": 9
+              },
+              "end": {
+                "line": 7,
+                "column": 3
+              }
+            },
+            "test": {
+              "type": "BooleanLiteral",
+              "range": {
+                "start": {
+                  "line": 5,
+                  "column": 13
+                },
+                "end": {
+                  "line": 5,
+                  "column": 18
+                }
+              },
+              "value": false
+            },
+            "consequent": [],
+            "alternate": []
+          }
+        },
+        {
+          "type": "WhileStatment",
+          "range": {
+            "start": {
+              "line": 11,
+              "column": 2
+            },
+            "end": {
+              "line": 13,
+              "column": 3
+            }
+          },
+          "condition": {
+            "type": "BooleanLiteral",
+            "range": {
+              "start": {
+                "line": 11,
+                "column": 9
+              },
+              "end": {
+                "line": 11,
+                "column": 14
+              }
+            },
+            "value": false
+          },
+          "body": [
+            {
+              "type": "ExpressionStatement",
+              "range": {
+                "start": {
+                  "line": 12,
+                  "column": 4
+                },
+                "end": {
+                  "line": 12,
+                  "column": 7
+                }
+              },
+              "expression": {
+                "type": "UnaryOperation",
+                "range": {
+                  "start": {
+                    "line": 12,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 12,
+                    "column": 7
+                  }
+                },
+                "operator": "+",
+                "operand": {
+                  "type": "UnaryOperation",
+                  "range": {
+                    "start": {
+                      "line": 12,
+                      "column": 5
+                    },
+                    "end": {
+                      "line": 12,
+                      "column": 7
+                    }
+                  },
+                  "operator": "+",
+                  "operand": {
+                    "type": "Identifier",
+                    "range": {
+                      "start": {
+                        "line": 12,
+                        "column": 6
+                      },
+                      "end": {
+                        "line": 12,
+                        "column": 7
+                      }
+                    },
+                    "name": "x"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "ForStatement",
+          "range": {
+            "start": {
+              "line": 15,
+              "column": 2
+            },
+            "end": {
+              "line": 17,
+              "column": 3
+            }
+          },
+          "init": {
+            "type": "BinaryOperation",
+            "range": {
+              "start": {
+                "line": 15,
+                "column": 7
+              },
+              "end": {
+                "line": 15,
+                "column": 12
+              }
+            },
+            "operator": "=",
+            "left": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 15,
+                  "column": 7
+                },
+                "end": {
+                  "line": 15,
+                  "column": 8
+                }
+              },
+              "name": "x"
+            },
+            "right": {
+              "type": "IntegerLiteral",
+              "range": {
+                "start": {
+                  "line": 15,
+                  "column": 11
+                },
+                "end": {
+                  "line": 15,
+                  "column": 12
+                }
+              },
+              "value": 0
+            }
+          },
+          "test": {
+            "type": "BinaryOperation",
+            "range": {
+              "start": {
+                "line": 15,
+                "column": 14
+              },
+              "end": {
+                "line": 15,
+                "column": 19
+              }
+            },
+            "operator": "<",
+            "left": {
+              "type": "Identifier",
+              "range": {
+                "start": {
+                  "line": 15,
+                  "column": 14
+                },
+                "end": {
+                  "line": 15,
+                  "column": 15
+                }
+              },
+              "name": "x"
+            },
+            "right": {
+              "type": "IntegerLiteral",
+              "range": {
+                "start": {
+                  "line": 15,
+                  "column": 18
+                },
+                "end": {
+                  "line": 15,
+                  "column": 19
+                }
+              },
+              "value": 5
+            }
+          },
+          "update": {
+            "type": "UnaryOperation",
+            "range": {
+              "start": {
+                "line": 15,
+                "column": 21
+              },
+              "end": {
+                "line": 15,
+                "column": 24
+              }
+            },
+            "operator": "+",
+            "operand": {
+              "type": "UnaryOperation",
+              "range": {
+                "start": {
+                  "line": 15,
+                  "column": 22
+                },
+                "end": {
+                  "line": 15,
+                  "column": 24
+                }
+              },
+              "operator": "+",
+              "operand": {
+                "type": "Identifier",
+                "range": {
+                  "start": {
+                    "line": 15,
+                    "column": 23
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 24
+                  }
+                },
+                "name": "x"
+              }
+            }
+          },
+          "body": [
+            {
+              "type": "ExpressionStatement",
+              "range": {
+                "start": {
+                  "line": 16,
+                  "column": 4
+                },
+                "end": {
+                  "line": 16,
+                  "column": 17
+                }
+              },
+              "expression": {
+                "type": "FunctionCall",
+                "range": {
+                  "start": {
+                    "line": 16,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 16,
+                    "column": 17
+                  }
+                },
+                "callee": {
+                  "type": "Identifier",
+                  "range": {
+                    "start": {
+                      "line": 16,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 16,
+                      "column": 14
+                    }
+                  },
+                  "name": "ConsoleLog"
+                },
+                "arguments": [
+                  {
+                    "type": "IntegerLiteral",
+                    "range": {
+                      "start": {
+                        "line": 16,
+                        "column": 15
+                      },
+                      "end": {
+                        "line": 16,
+                        "column": 16
+                      }
+                    },
+                    "value": 3
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
