@@ -1,4 +1,6 @@
-# StarCraft 2 Galaxy Parser [![Build Status](https://travis-ci.org/rameshvarun/galaxy-parser.svg)](https://travis-ci.org/rameshvarun/galaxy-parser)
+# StarCraft 2 Galaxy Parser
+
+[![Node.js CI](https://github.com/rameshvarun/galaxy-parser/actions/workflows/node.js.yml/badge.svg)](https://github.com/rameshvarun/galaxy-parser/actions/workflows/node.js.yml)
 
 ## Notes
 ### Extended Backus–Naur Form Grammar
