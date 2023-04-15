@@ -8,8 +8,7 @@
 ```javascript
 const parse = require("sc2-galaxy-parser");
 console.log(parse(`void Main(int argc, string[100] argv) {
-  ConsoleLog("Basic Galaxy Test...");
-  TestFunctionA();
+  ConsoleLog("Galaxy Test...");
 }`));
 ```
 
